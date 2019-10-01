@@ -1,0 +1,1 @@
+{"Action": "Instantiation","ContainerImageName": "tutum/tomcat","HostIP": "195.82.14.15","Port": [{"Type": "tcp","ContainerPort": "8080","HostPort": "8181"}],"EnvironmentVariables": {"TOMCAT_PASS": "yhfbjlks"}}
