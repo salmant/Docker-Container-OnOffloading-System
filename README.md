@@ -1,5 +1,9 @@
-# Mobile Offloading Processing Microservice
+# Docker container On/Offloading System
 <p align="justify">
+The On/Offloading system can be used to offload Docker containers from a computing device to any other resource at runtime, for example from an edge node to the cloud or vice versa. New requirements such as considering interoperability and achieving a high level of portability within heterogeneous computing frameworks currently have to be met. This is because IoT applications include different services usually distributed across interconnected, heterogeneous infrastructures including edge nodes, fog resources, micro-local, private and public clouds. As a consequence, containers running on each infrastructure provider complies with various proprietary API. Therefore, moving containers from one infrastructure to another at runtime is currently a challenge due to vendor lock-in problem, interoperability concern and similar. In order to address this challenge, you can use the Docker container On/Offloading System, which provides two components: On/Offloading Server and On/Offloading Client.
+  
+![Image](https://media-exp1.licdn.com/media-proxy/ext?w=800&h=800&f=n&hash=dcI1KvQON68hJgyiC4v5tfnUAP0%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta5g-0R6jnhodx1Ey9KGTqAGj6E5DQJHUA3L0CHH05IbfPWi_cM_YfLeipkARfitVjQAzfb61SDmwQY61eYq-e9lyiMHid5n5agYUbhl4lWdI)
+
 
 ## On/Offloading Server
 An API is exposed by the On/Offloading Server to receive a JSON-based instruction which can be start or stop a container instance. Afterwards, the On/Offloading Server translates the instruction into a platform-dependent deployment request which is then sent to the API exposed by the On/Offloading Client.
