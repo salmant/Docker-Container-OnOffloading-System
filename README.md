@@ -14,40 +14,40 @@ An On/Offloading Client is installed on every edge resource (e.g. Raspberry Pi) 
 <center>######################################</center><br/>
 
 ## Step 1- Install Docker and Docker's Remote API
-On every edge node or cloud-based host, the Docker engine should be installed, and Docker's Remote API should be enabled. To this end, follow the instructions explained in the following page: 
+On every edge node or cloud-based host, the Docker engine should be installed, and Docker's Remote API should be enabled. To this end, follow the instructions explained in the following page: <br>
 https://github.com/salmant/Docker-Container-OnOffloading-System/blob/master/Docker-and-Docker-Remote-API.md
 
 ## Step 2- Make sure that TCP port 10001 is open
-On every edge node or cloud-based host where the On/Offloading Client will be running, TCP port `10001` should be open and accessible from the outside where the On/Offloading Server is deployed. The On/Offloading Client is listening to the port with the number of `10001` to reaceive requests (`Instantiation` or `Termination` requests) sent from the On/Offloading Server. To make sure, you can execute the following Java code on a remote host preferably outside of the On/Offloading Client's network:
+On every edge node or cloud-based host where the On/Offloading Client will be running, TCP port `10001` should be open and accessible from the outside where the On/Offloading Server is deployed. The On/Offloading Client is listening to the port with the number of `10001` to reaceive requests (`Instantiation` or `Termination` requests) sent from the On/Offloading Server. To make sure, you can execute the following Java code on a remote host preferably outside of the On/Offloading Client's network: <br>
 https://github.com/salmant/Docker-Container-OnOffloading-System/blob/master/TestIfPortIsOpenOnTheHost.java
 
 ## Step 3- Run the On/Offloading Client
-On every edge node or cloud-based host, the On/Offloading Client should be deployed. To run the On/Offloading Client, the following Java code should be executed on the edge node or cloud-based host:
+On every edge node or cloud-based host, the On/Offloading Client should be deployed. To run the On/Offloading Client, the following Java code should be executed on the edge node or cloud-based host: <br>
 https://github.com/salmant/Docker-Container-OnOffloading-System/blob/master/On_Offloading_Client.java
 
 ## Step 4- Pull the container image which you would like to run
 On every edge node or cloud-based host where your container has to be instantiated by the Mobile Offloading Processing Microservice, the container image should be already pulled.
 
 ## Step 5- Use the On/Offloading Server's API
-The On/Offloading Server provides an API to receive a JSON message which is an instruction to instantiate (Instantiation) or terminate (Termination) a container. The On/Offloading Server is now deployed here:<br/>
+The On/Offloading Server provides an API to receive a JSON message which is an instruction to instantiate (Instantiation) or terminate (Termination) a container. The On/Offloading Server is now deployed here: <br>
 http://52.58.107.100:8282/onoffload/
 
-If you would like to have your own On/Offloading Server running on your infrastructure, you can use the following command:<br/>
+If you would like to have your own On/Offloading Server running on your infrastructure, you can use the following command: <br>
 `docker run -p 8282:8080 -p 10001:10001 -p 10002:10002 salmant/on_offloading_server_jsi:1.2`
 
 ## Step 6- Make the JSON message
 In order to make a JSON message to instantiate a container, the following code proides you a sample:
 https://github.com/salmant/Docker-Container-OnOffloading-System/blob/master/Instantiation.json
 
-In order to make a JSON message to terminate a container, the following code proides you a sample:
+In order to make a JSON message to terminate a container, the following code proides you a sample: <br>
 https://github.com/salmant/Docker-Container-OnOffloading-System/blob/master/Termination.json
 
-Note 1: The JSON message should be in one line as aforementioned examples.<br/>
-Note 2: In the JSON message, `HostIP` is the IP address of the resource where the container needs to be whether instantiated or terminated.<br/>
+Note 1: The JSON message should be in one line as aforementioned examples.<br>
+Note 2: In the JSON message, `HostIP` is the IP address of the resource where the container needs to be whether instantiated or terminated.<br>
 Note 3: In the JSON message, `Action` should be one of `Instantiation`, `instantiation`, `Termination` or `termination`.  
 Note 4: Make sure that the JSON message is valid. To this end, different tools such as https://jsonlint.com/ can be used.<br/>
 Note 5: In addition to the Web-based GUI, you can call the On/Offloading Server's API through your own program. To this end, the URL which provides the On/Offloading Server's API is: `http://52.58.107.100:8282/onoffload/api/instruction`
-The following Java code is an example which calls the On/Offloading Server's API to instantiate a specific container:<br/>
+The following Java code is an example which calls the On/Offloading Server's API to instantiate a specific container: <br>
 https://github.com/salmant/Docker-Container-OnOffloading-System/blob/master/SendingPostRequest.java
 
 
