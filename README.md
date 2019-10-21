@@ -15,15 +15,15 @@ An On/Offloading Client is installed on every edge resource (e.g. Raspberry Pi) 
 
 ## Step 1- Install Docker and Docker's Remote API
 On every edge node or cloud-based host, the Docker engine should be installed, and Docker's Remote API should be enabled. To this end, follow the instructions explained in the following page: 
-https://github.com/salmant/PrEstoCloud/blob/master/OnOffloading/Docker-and-Docker-Remote-API.md
+https://github.com/salmant/Docker-Container-OnOffloading-System/blob/master/Docker-and-Docker-Remote-API.md
 
 ## Step 2- Make sure that TCP port 10001 is open
 On every edge node or cloud-based host where the On/Offloading Client will be running, TCP port `10001` should be open and accessible from the outside where the On/Offloading Server is deployed. The On/Offloading Client is listening to the port with the number of `10001` to reaceive requests (`Instantiation` or `Termination` requests) sent from the On/Offloading Server. To make sure, you can execute the following Java code on a remote host preferably outside of the On/Offloading Client's network:
-https://github.com/salmant/PrEstoCloud/blob/master/OnOffloading/TestIfPortIsOpenOnTheHost.java
+https://github.com/salmant/Docker-Container-OnOffloading-System/blob/master/TestIfPortIsOpenOnTheHost.java
 
 ## Step 3- Run the On/Offloading Client
 On every edge node or cloud-based host, the On/Offloading Client should be deployed. To run the On/Offloading Client, the following Java code should be executed on the edge node or cloud-based host:
-https://github.com/salmant/PrEstoCloud/blob/master/OnOffloading/On_Offloading_Client.java
+https://github.com/salmant/Docker-Container-OnOffloading-System/blob/master/On_Offloading_Client.java
 
 ## Step 4- Pull the container image which you would like to run
 On every edge node or cloud-based host where your container has to be instantiated by the Mobile Offloading Processing Microservice, the container image should be already pulled.
@@ -37,10 +37,10 @@ If you would like to have your own On/Offloading Server running on your infrastr
 
 ## Step 6- Make the JSON message
 In order to make a JSON message to instantiate a container, the following code proides you a sample:
-https://github.com/salmant/PrEstoCloud/blob/master/OnOffloading/Instantiation.json
+https://github.com/salmant/Docker-Container-OnOffloading-System/blob/master/Instantiation.json
 
 In order to make a JSON message to terminate a container, the following code proides you a sample:
-https://github.com/salmant/PrEstoCloud/blob/master/OnOffloading/Termination.json
+https://github.com/salmant/Docker-Container-OnOffloading-System/blob/master/Termination.json
 
 Note 1: The JSON message should be in one line as aforementioned examples.<br/>
 Note 2: In the JSON message, `HostIP` is the IP address of the resource where the container needs to be whether instantiated or terminated.<br/>
@@ -48,7 +48,7 @@ Note 3: In the JSON message, `Action` should be one of `Instantiation`, `instant
 Note 4: Make sure that the JSON message is valid. To this end, different tools such as https://jsonlint.com/ can be used.<br/>
 Note 5: In addition to the Web-based GUI, you can call the On/Offloading Server's API through your own program. To this end, the URL which provides the On/Offloading Server's API is: `http://52.58.107.100:8282/onoffload/api/instruction`
 The following Java code is an example which calls the On/Offloading Server's API to instantiate a specific container:<br/>
-https://github.com/salmant/PrEstoCloud/blob/master/OnOffloading/SendingPostRequest.java
+https://github.com/salmant/Docker-Container-OnOffloading-System/blob/master/SendingPostRequest.java
 
 
 ## Step 7- Returned value sent by the On/Offloading Server's API
