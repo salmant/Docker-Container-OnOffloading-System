@@ -17,13 +17,13 @@ An On/Offloading Client is installed on every edge resource (e.g. Raspberry Pi) 
 On every edge node or cloud-based host, the Docker engine should be installed, and Docker's Remote API should be enabled. To this end, follow the instructions explained in the following page: <br>
 https://github.com/salmant/Docker-Container-OnOffloading-System/blob/master/Docker-and-Docker-Remote-API.md
 
-## Step 2- Make sure that TCP port 10001 is open
-On every edge node or cloud-based host where the On/Offloading Client will be running, TCP port `10001` should be open and accessible from the outside where the On/Offloading Server is deployed. The On/Offloading Client is listening to the port with the number of `10001` to reaceive requests (`Instantiation` or `Termination` requests) sent from the On/Offloading Server. To make sure, you can execute the following Java code on a remote host preferably outside of the On/Offloading Client's network: <br>
-https://github.com/salmant/Docker-Container-OnOffloading-System/blob/master/TestIfPortIsOpenOnTheHost.java
-
-## Step 3- Run the On/Offloading Client
+## Step 2- Run the On/Offloading Client
 On every edge node or cloud-based host, the On/Offloading Client should be deployed. To run the On/Offloading Client, the following Java code should be executed on the edge node or cloud-based host: <br>
 https://github.com/salmant/Docker-Container-OnOffloading-System/blob/master/On_Offloading_Client.java
+
+## Step 3- Make sure that TCP port 10001 is open
+On every edge node or cloud-based host where the On/Offloading Client will be running, TCP port `10001` should be open and accessible from the outside where the On/Offloading Server is deployed. The On/Offloading Client is listening to the port with the number of `10001` to reaceive requests (`Instantiation` or `Termination` requests) sent from the On/Offloading Server. To make sure, you can execute the following Java code on a remote host preferably outside of the On/Offloading Client's network: <br>
+https://github.com/salmant/Docker-Container-OnOffloading-System/blob/master/TestIfPortIsOpenOnTheHost.java
 
 ## Step 4- Pull the container image which you would like to run
 On every edge node or cloud-based host where your container has to be instantiated by the Mobile Offloading Processing Microservice, the container image should be already pulled.
