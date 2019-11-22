@@ -33,7 +33,7 @@ The On/Offloading Server provides an API to receive a JSON message which is an i
 http://52.58.107.100:8282/onoffload/
 
 If you would like to have your own On/Offloading Server running on your infrastructure, you can use the following command: <br>
-`docker run -p 8282:8080 -p 10001:10001 -p 10002:10002 salmant/on_offloading_server_jsi:1.2`
+`docker run -p 8282:8080 -p 10001:10001 -p 10002:10002 salmant/on_offloading_server_jsi:1.3`
 
 ## Step 6- Make the JSON message
 In order to make a JSON message to instantiate a container, the following code proides you a sample:
